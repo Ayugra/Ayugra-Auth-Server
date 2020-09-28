@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Database">
+      <UniqueIdentifier>{d1d97198-762a-4df6-a99c-0eaa3437db7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database\Tables">
+      <UniqueIdentifier>{1a584ad8-b2fa-4bbd-96ec-5a92637acf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cryptography">
+      <UniqueIdentifier>{2c263f5e-565c-472e-ba30-67f1b4ffe76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{f2bd9142-2531-482f-9ab6-2259ee14fa21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Packets">
+      <UniqueIdentifier>{48d4fbd3-d944-4986-9ff0-47c16e0c2577}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Network/Client.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network/Configuration.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Cryptography/Cryptography.cpp">
+      <Filter>Cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="Cryptography/md5.cpp">
+      <Filter>Cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="Database/DatabaseManager.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Network/Network.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network/Server.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network/World.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lang.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Database/Tables/ay_accounts.h">
+      <Filter>Database\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="Network/Client.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network/Configuration.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Cryptography/Cryptography.h">
+      <Filter>Cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="Cryptography/md5.h">
+      <Filter>Cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="Database/DatabaseManager.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Network/Network.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network/Server.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network/World.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\Packets\R_NoS0577.h">
+      <Filter>Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\Packets\S_failc.h">
+      <Filter>Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\Packets\S_NsTeST.h">
+      <Filter>Network\Packets</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
