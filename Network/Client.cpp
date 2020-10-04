@@ -107,14 +107,14 @@ int Client::checkCode()
 {
 	if (!isUuidValid(code))
 		return 2;
-	accountInfo.populate(DatabaseManager::query("SELECT * FROM ay_accounts WHERE code='" + code + "'"));
+	accountInfo.populate(DatabaseManager::query("SELECT * FROM ay_accounts WHERE code = '" + code + "'"));
 	if (accountInfo.getCode() != code)
 		return 6;
 	if (accountInfo.isBanned())
 		return 7;
 	if (!accountInfo.isVerified())
 		return 6;
-	std::vector<std::string> res = DatabaseManager::query("SELECT connected FROM ay_accounts_status WHERE id='"
+	std::vector<std::string> res = DatabaseManager::query("SELECT connected FROM ay_accounts_status WHERE account_id = '"
 		+ std::to_string(accountInfo.getId()) + "'");
 	if (res.size() == 0)
 		return 2;
@@ -162,7 +162,7 @@ bool Client::saveAccountDataInDatabase()
 	if (encryptionKey == -1)
 		return false;
 		DatabaseManager::query("UPDATE ay_accounts SET encryption_key = '" + std::to_string(encryptionKey)
-			+ "' WHERE id = " + std::to_string(accountInfo.getId()));
+			+ "' WHERE account_id = " + std::to_string(accountInfo.getId()));
 	time_t t = time(0);
 	struct tm timeStruct;
 	errno_t error = localtime_s(&timeStruct, &t);
@@ -173,7 +173,7 @@ bool Client::saveAccountDataInDatabase()
 	if (!ip.empty() && !gfuid.empty() && !date.empty())
 	{
 		DatabaseManager::query("UPDATE ay_accounts_logs SET date_last_connection = '" + date +
-			"', ip_last_connection = '" + ip + "', gfuid_last_connection = '" + gfuid + "' WHERE `id` = '"
+			"', ip_last_connection = '" + ip + "', gfuid_last_connection = '" + gfuid + "' WHERE `account_id` = '"
 			+ std::to_string(accountInfo.getId()) + "'");
 		return true;
 	}
